@@ -6,7 +6,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 - React Native
 - Jotai
 - Expo
-- 
+  
 ## Note 
 
 You need to have a node version ≥ 19.
