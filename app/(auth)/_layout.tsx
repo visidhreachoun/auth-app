@@ -5,21 +5,18 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { Screens } from "@/constants/Screens";
 import Header from "@/components/header/Header";
 
-export default function AuthLayout() {
-  const renderHeader = (props: NativeStackHeaderProps) => {
-    const title = props.options.title ?? "";
+export default function _layout() {
+  const renderHeader = (props: any) => {
+    const title = props.options.title;
     return <Header title={title} />;
   };
 
   return (
-    <Stack>
-      <Stack.Screen
-        name={Screens.Auth.login}
-        options={{ header: renderHeader }}
-      />
+    <Stack screenOptions={{ header: renderHeader }}>
+      <Stack.Screen name={Screens.Auth.login} options={{ title: "Login" }} />
       <Stack.Screen
         name={Screens.Auth.profile}
-        options={{ header: renderHeader }}
+        options={{ title: "Profile" }}
       />
     </Stack>
   );

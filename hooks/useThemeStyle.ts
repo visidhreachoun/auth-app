@@ -1,5 +1,3 @@
-import { Languages } from "@/constants/Language";
-import { EnglishFont, Font, KhmerFont } from "@/constants/font-constant";
 import useTheme from "@/core/theme/theme-hooks";
 import { ThemeColors } from "@/core/theme/types";
 
@@ -10,13 +8,11 @@ type Styles = {
 };
 
 export default function useThemeStyle<T extends Styles>(
-  styles: (theme: ThemeColors, font: Font) => T
+  styles: (theme: ThemeColors) => T
 ) {
   const theme = useTheme();
 
-  const font = EnglishFont;
+  const themeStyle = styles(theme.colors);
 
-  const themeStyle = styles(theme.colors, font);
-
-  return { theme, themeStyle, font };
+  return { theme, themeStyle };
 }

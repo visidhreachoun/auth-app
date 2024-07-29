@@ -11,6 +11,7 @@ import { DarkTheme, LightTheme } from "@/core/theme/colors";
 import store from "@/api/store";
 import RootNavigation from "@/navigation/root-navigation";
 import { StatusBar } from "expo-status-bar";
+import { Provider } from "jotai";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,7 +33,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : LightTheme}>
+    <ThemeProvider value={colorScheme === "dark" ? LightTheme : LightTheme}>
       <Provider store={store}>
         <StatusBar />
         <RootNavigation />

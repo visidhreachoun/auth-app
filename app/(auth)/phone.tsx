@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function phone() {
+export default function Page() {
   return (
     <View>
       <Text>phone</Text>
